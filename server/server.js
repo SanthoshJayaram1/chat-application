@@ -36,8 +36,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 const corsOptions = {
-  // origin: 'https://wechat-web.netlify.app',
-  origin: 'http:localhost:5000',
+  origin: 'https://wechat-web.netlify.app',
+  // origin: 'http:localhost:5000',
   credentials: true, 
 };
 
