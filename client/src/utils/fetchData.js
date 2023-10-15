@@ -14,14 +14,22 @@ export const getDataAPI = async(url, accessToken) => {
   return res
 }
 
+export const postDataAPI = async(url, data, accessToken) => {
+  const res = await axiosInstance.post(`/api/v1/${url}`, data, {
+    headers: {
+      Authorization: accessToken
+    },
+    withCredentials:true
+  })
 
+  return res
+}
 
 export const patchDataAPI = async(url, data, accessToken) => {
   const res = await axiosInstance.patch(`/api/v1/${url}`, data, {
     headers: {
       Authorization: accessToken
-    },
-    withCredentials: true,
+    }
   })
 
   return res
