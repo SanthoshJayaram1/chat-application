@@ -15,7 +15,7 @@ module.exports.generateRefreshToken = (payload, res) => {
   res.cookie('wechat_rfToken', token, {
     httpOnly: true,
     maxAge: 30 * 24 * 60 * 60 * 1000,
-    path: '/api/v1/auth/refresh_token'
+    path: '/'
   })
 
   return token
