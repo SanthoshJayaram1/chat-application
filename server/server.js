@@ -18,21 +18,10 @@ const server = http.createServer(app)
 
 const io=require('socket.io')(server,{
   cors:{
-    origin:["http://localhost:3000"]
+    origin:["https://wechat-web.netlify.app/"]
   }
 });
 
-// const io=require('socket.io')(3000,{
-//   cors:{
-//     origin:["http://localhost:3001"]
-//   }
-// });
-
-// io.listen(3001);
-
-
-
-// const io=socketio(server);
 
 io.on('connection', (socket) => {
   console.log("user connected : "+socket.id);
@@ -41,7 +30,7 @@ io.on('connection', (socket) => {
 
 // Set Access-Control-Allow-Credentials header
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Origin', 'https://wechat-web.netlify.app/');
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
@@ -49,17 +38,12 @@ app.use((req, res, next) => {
 
 const peerServer=ExpressPeerServer(server, { path: '/' })
 
-// peerServer.on('connection',(client)=>{
-//   console.log(client);
-// })
-// app.use(peerServer);
-
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://wechat-web.netlify.app/',
   credentials: true, 
 };
 
