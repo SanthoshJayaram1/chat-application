@@ -13,6 +13,7 @@ module.exports.generateRefreshToken = (payload, res) => {
   const token = jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '30d'})
  
   res.cookie('wechat_rfToken', token, {
+    secure:true,
     httpOnly: true,
     maxAge: 30 * 24 * 60 * 60 * 1000,
     path: '/'
