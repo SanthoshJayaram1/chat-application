@@ -42,9 +42,9 @@ const CallModal = () => {
     openStream(call.video)
       .then(stream => {
         playStream(yourVideo.current, stream)
+        yourVideo.current.volume = 0; // Mute the local video's audio
         const track = stream.getTracks()
         setTracks(track)
-
         const newCall = peer.call(call.peerId, stream)
         newCall.on('stream', function(remoteStream) {
           playStream(otherVideo.current, remoteStream)
@@ -141,6 +141,7 @@ const CallModal = () => {
         .then(stream => {
           if (yourVideo.current) {
             playStream(yourVideo.current, stream)
+            yourVideo.current.volume = 0; // Mute the local video's audio
           }
 
           const track = stream.getTracks()
