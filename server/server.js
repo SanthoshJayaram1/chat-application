@@ -16,10 +16,18 @@ const app = express()
 const server = http.createServer(app)
 
 
-const io=require('socket.io')(server,{
-  cors:{
-    origin:["https://wechat-web.netlify.app/"]
-  }
+// const io=require('socket.io')(server,{
+//   cors:{
+//     origin:["https://wechat-web.netlify.app/"]
+//   }
+// });
+
+const io = require('socket.io')(server, {
+  cors: {
+    origin: "https://wechat-web.netlify.app", 
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"], 
+    credentials: true,
+  },
 });
 
 
@@ -29,13 +37,13 @@ io.on('connection', (socket) => {
 })
 
 // Set Access-Control-Allow-Credentials header
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://wechat-web.netlify.app');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT,PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', 'https://wechat-web.netlify.app');
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT,PATCH, DELETE');
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+//   res.setHeader('Access-Control-Allow-Credentials', true);
+//   next();
+// });
 
 
 const peerServer=ExpressPeerServer(server, { path: '/' })
@@ -45,11 +53,12 @@ app.use(express.urlencoded({extended: true}))
 
 
 const corsOptions = {
-  origin: 'https://wechat-web.netlify.app/',
+  origin: 'https://wechat-web.netlify.app',
   credentials: true, 
 };
 
 app.use(cors(corsOptions));
+app.options("*",cors(corsOptions))
 
 app.use(cookieParser())
 app.use(morgan('dev'))
