@@ -52,7 +52,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <HeadInfo title='Inspace - Message' />
+      <HeadInfo title='WeChat - Message' />
       <Header selectContact={selectContact} setSelectContact={setSelectContact} />
       <div className='md:flex md:static relative overflow-x-hidden'>
         <div className='md:flex-1 md:border-r-2'>

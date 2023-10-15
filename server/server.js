@@ -15,16 +15,10 @@ const app = express()
 
 const server = http.createServer(app)
 
-
-// const io=require('socket.io')(server,{
-//   cors:{
-//     origin:["https://wechat-web.netlify.app/"]
-//   }
-// });
-
 const io = require('socket.io')(server, {
   cors: {
     origin: "https://wechat-web.netlify.app", 
+    // origin: "http://localhost:5000", 
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"], 
     credentials: true,
   },
@@ -36,24 +30,14 @@ io.on('connection', (socket) => {
   SocketServer(socket)
 })
 
-// Set Access-Control-Allow-Credentials header
-// app.use((req, res, next) => {
-//   res.setHeader('Access-Control-Allow-Origin', 'https://wechat-web.netlify.app');
-//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT,PATCH, DELETE');
-//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-//   res.setHeader('Access-Control-Allow-Credentials', true);
-//   next();
-// });
-
-
-const peerServer=ExpressPeerServer(server, { path: '/' })
+ExpressPeerServer(server, { path: '/' })
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-
 const corsOptions = {
-  origin: 'https://wechat-web.netlify.app',
+  // origin: 'https://wechat-web.netlify.app',
+  origin: 'http:localhost:5000',
   credentials: true, 
 };
 

@@ -11,8 +11,8 @@ module.exports.generateAccessToken = (payload) => {
 
 module.exports.generateRefreshToken = (payload, res) => {
   const token = jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '30d'})
-  // console.log("1st"+" "+token);
-  res.cookie('inspace_rfToken', token, {
+ 
+  res.cookie('wechat_rfToken', token, {
     httpOnly: true,
     maxAge: 30 * 24 * 60 * 60 * 1000,
     path: '/api/v1/auth/refresh_token'

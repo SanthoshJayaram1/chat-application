@@ -28,7 +28,7 @@ const ActivateAccount = () => {
 
   return (
     <>
-      <HeadInfo title='Inspace - Account Activation' />
+      <HeadInfo title='WeChat - Account Activation' />
       <div></div>
     </>
   )

@@ -1,7 +1,9 @@
 import axios from 'axios'
 
 export const axiosInstance= axios.create({
+  withCredentials: true,
   baseURL:"https://chat-webapplication.onrender.com"
+  // baseURL:"http://localhost:5000"
 });
 
 export const getDataAPI = async(url, accessToken) => {
@@ -18,8 +20,7 @@ export const postDataAPI = async(url, data, accessToken) => {
   const res = await axiosInstance.post(`/api/v1/${url}`, data, {
     headers: {
       Authorization: accessToken
-    },
-    withCredentials:true
+    }
   })
 
   return res

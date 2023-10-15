@@ -61,12 +61,12 @@ const Register = () => {
 
   return (
     <>
-      <HeadInfo title='Inspace - Register' />
+      <HeadInfo title='WeChat - Register' />
       <div className='flex'>
         <div className='p-9 flex-1'>
           <div className='flex items-center mb-12'>
-            <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt='Inspace' />
-            <h1 className='text-3xl ml-6 font-logo'>Inspace</h1>
+            <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt='WeChat' />
+            <h1 className='text-3xl ml-6 font-logo'>WeChat</h1>
           </div>
           <h1 className='text-3xl font-medium mb-7'>Sign Up</h1>
           <form onSubmit={handleSubmit}>
@@ -111,7 +111,7 @@ const Register = () => {
           </form>
         </div>
         <div className='md:block hidden w-full flex-[2] pointer-events-none'>
-          <img src={`${process.env.PUBLIC_URL}/images/authentication.png`} alt='Inspace Authentication' className='w-full h-screen object-cover' />
+          <img src={`${process.env.PUBLIC_URL}/images/authentication.png`} alt='WeChat Authentication' className='w-full h-screen object-cover' />
         </div>
       </div>
     </>

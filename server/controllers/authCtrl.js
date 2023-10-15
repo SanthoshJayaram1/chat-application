@@ -77,7 +77,7 @@ const authCtrl = {
   },
   logout: async(req, res) => {
     try {
-      res.clearCookie('inspace_rfToken', {
+      res.clearCookie('wechat_rfToken', {
         path: '/api/v1/auth/refresh_token'
       })
 
@@ -92,23 +92,23 @@ const authCtrl = {
   },
   refreshToken: async(req, res) => {
     try {
-      const rfToken = req.cookies.inspace_rfToken
-      // console.log(rfToken);
+      const rfToken = req.cookies.wechat_rfToken
+      console.log("cookiee : "+rfToken);
       if (!rfToken)
-        return res.status(400).json({msg: 'Invalid token.'})
+        return res.status(400).json({msg: 'Please Login'})
 
       const decoded = jwt.verify(rfToken, process.env.REFRESH_TOKEN_SECRET)
       // console.log(decoded);
       if (!decoded.id)
-        return res.status(400).json({msg: 'Invalid token.'})
+        return res.status(400).json({msg: 'Please Login'})
 
       const user = await User.findOne({_id: decoded.id}).select('-password +rf_token').populate('friends', 'avatar name userId')
       if (!user)
-        return res.status(404).json({msg: 'User not found.'})
+        return res.status(404).json({msg: 'User not found'})
 
       if (rfToken !== user.rf_token){
         // console.log(user.rf_token)
-        return res.status(403).json({msg: 'Invalid authentication.'})}
+        return res.status(403).json({msg: 'Invalid authentication'})}
 
       const accessToken = generateAccessToken({id: user._id})
       const refreshToken = generateRefreshToken({id: user._id}, res)
@@ -318,7 +318,7 @@ const loginUser = async(user, password, res) => {
   const accessToken = generateAccessToken({id: user._id})
   const refreshToken = generateRefreshToken({id: user._id}, res)
   
-  console.log(refreshToken);
+  console.log("refreshToken : "+refreshToken);
   await User.findOneAndUpdate({_id: user._id}, {
     rf_token: refreshToken
   })
