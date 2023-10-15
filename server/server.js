@@ -52,7 +52,7 @@ const peerServer=ExpressPeerServer(server, { path: '/' })
 // peerServer.on('connection',(client)=>{
 //   console.log(client);
 // })
-app.use(peerServer);
+// app.use(peerServer);
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))

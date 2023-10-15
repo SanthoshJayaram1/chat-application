@@ -31,9 +31,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(refreshToken())
-    const socket = io("http://localhost:3000");
-    // const socket = io("/");
-    console.log(socket);
+    const socket = io("https://chat-webapplication.onrender.com");
     dispatch({ type: GLOBAL_TYPES.SOCKET, payload: socket })
     return () => socket.close()
   }, [dispatch])
