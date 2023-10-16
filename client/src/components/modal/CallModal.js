@@ -33,16 +33,17 @@ const CallModal = () => {
   }
 
   const playStream = (tag, stream) => {
-    let video = tag
-    video.srcObject = stream
-    video.play()
+    let video = tag;
+    video.srcObject = stream;
+    video.muted=true;
+    video.play();
   }
 
   const handleAnswer = () => {
     openStream(call.video)
       .then(stream => {
         playStream(yourVideo.current, stream)
-        yourVideo.current.volume = 0; // Mute the local video's audio
+        // yourVideo.current.volume = 0; // Mute the local video's audio
         const track = stream.getTracks()
         setTracks(track)
         const newCall = peer.call(call.peerId, stream)
@@ -140,8 +141,8 @@ const CallModal = () => {
       openStream(call.video)
         .then(stream => {
           if (yourVideo.current) {
-            playStream(yourVideo.current, stream)
-            yourVideo.current.volume = 0; // Mute the local video's audio
+            playStream(yourVideo.current, stream);
+            // yourVideo.current.volume = 0; // Mute the local video's audio
           }
 
           const track = stream.getTracks()

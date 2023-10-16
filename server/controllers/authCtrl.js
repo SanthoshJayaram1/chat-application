@@ -78,7 +78,9 @@ const authCtrl = {
   logout: async(req, res) => {
     try {
       res.clearCookie('wechat_rfToken', {
-        path: '/api/v1/auth/refresh_token'
+        path: '/api/v1/auth/refresh_token',
+        secure:true,
+        sameSite:'none'
       })
 
       await User.findOneAndUpdate({_id: req.user._id}, {
@@ -93,7 +95,7 @@ const authCtrl = {
   refreshToken: async(req, res) => {
     try {
       const rfToken = req.cookies.wechat_rfToken
-      console.log("cookiee : "+rfToken);
+      console.log("refreshTokenfrombrowser : "+rfToken);
       if (!rfToken)
         return res.status(400).json({msg: 'Please Login'})
 
@@ -116,7 +118,7 @@ const authCtrl = {
       await User.findOneAndUpdate({_id: user._id}, {
         rf_token: refreshToken
       })
-
+      console.log("newrefreshTokenSetAfterLogin : "+rfToken);
       res.status(200).json({
         user: {
           ...user._doc,
