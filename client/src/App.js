@@ -7,6 +7,8 @@ import io from 'socket.io-client'
 import Dashboard from './pages/dashboard.js'
 import Login from './pages/login.js'
 import PageRender from './utils/PageRender.js'
+import ResetPassword from './pages/reset/resetLinkPage.js'
+import ActivateAccount from './pages/activate/activeUserLink.js'
 import Alert from './components/general/Alert.js'
 import SocketClient from './SocketClient'
 import CallModal from './components/modal/CallModal.js'
@@ -51,6 +53,8 @@ const App = () => {
       { call && <CallModal /> }
       <Routes>
         <Route path='/' element={auth.user ? <Dashboard /> : <Login />} />
+        <Route path='/reset/:id' element={<ResetPassword />} />
+        <Route path='/activate/:id' element={<ActivateAccount />} />
         <Route path='/:page' element={<PageRender />} />
         <Route path='/:page/:id' element={<PageRender />} />
       </Routes>
