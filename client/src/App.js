@@ -18,7 +18,6 @@ const App = () => {
   const  auth  = useSelector(state => state.auth);
   const call  = useSelector(state => state.call);
   const dispatch = useDispatch();
-  console.log(auth.token);
   useEffect(() => {
     if (!("Notification" in window)) {
       alert('This browser does not support desktop notification')
