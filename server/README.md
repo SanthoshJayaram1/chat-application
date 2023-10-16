@@ -1,31 +1,11 @@
-<div id="top"></div>
 
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-<br />
 <div align="center">
-  <a href="https://github.com/stanleyclaudius/chat-app">
-    <img src="client/public/images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/SanthoshJayaram1/chat-application">
+    <img src="../client/public/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Chat Application</h3>
-
-  <p align="center">
-    An awesome chat application based on website
-    <br />
-    <a href="https://github.com/stanleyclaudius/chat-app.git"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://web-inspace.herokuapp.com">View Demo</a>
-    ·
-    <a href="https://github.com/stanleyclaudius/chat-app/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/stanleyclaudius/chat-app/issues">Request Feature</a>
-  </p>
+  
 </div>
 
 <details>
@@ -65,7 +45,6 @@ Main technology used to built this application are listed below:
 * [Tailwind CSS](https://tailwindcss.com/)
 * [MongoDB](https://mongodb.com/cloud/atlas/)
 * [Node.js](https://nodejs.org/)
-* [Heroku](https://herokuapp.com/)
 
 <p align="right"><a href="#top">back to top</a></p>
 
@@ -106,20 +85,20 @@ Rename .env.example file at ```server/config``` directory become ```.env```, the
     | :---: | :---: | :---: |
     | PORT | Your server port | 5000 |
     | CLIENT_URL | Your client side URL | http://localhost:3000 |
-    | MONGO_URL | Your MongoDB URL | mongodb://user:user1234@main-shardxxxx |
-    | ACCESS_TOKEN_SECRET | Random complex string for JWT | DUhxdx183)_--aACN#2%
-    | REFRESH_TOKEN_SECRET | Random complex string for JWT | 17hdjcD7ud(-*&732~
-    | ACTIVATION_TOKEN_SECRET | Random complex string for JWT | kc81i^&%`-Did##1Z
-    | GOOGLE_CLIENT_ID | Your google client ID | 3392348929324-tarur228dxxx |
-    | GOOGLE_CLIENT_SECRET | Your google client secret | GOCSPX-xxxxxxx |
-    | GMAIL_REFRESH_TOKEN | Your gmail refresh token | 1//028dhdjBMudu2829xxx |
+    | MONGO_URL | Your MongoDB URL | mongodb://user123:user123@main-xxxxxxx |
+    | ACCESS_TOKEN_SECRET | Random complex string for JWT | ab95ac9e-d992-40c4-b858-6f9cfa9db51d
+    | REFRESH_TOKEN_SECRET | Random complex string for JWT | 1ee144a7-0cb7-4dc1-9fe7-6c786289aae7
+    | ACTIVATION_TOKEN_SECRET | Random complex string for JWT | 7752399a-d50f-49bc-9d42-349b2ce5ef14
+    | GOOGLE_CLIENT_ID | Your google client ID | 3392389635496-jayaram193kxxx |
+    | GOOGLE_CLIENT_SECRET | Your google client secret | KOCAPC-xxxxxxx |
+    | GMAIL_REFRESH_TOKEN | Your gmail refresh token | 1//028tydjJKoit1925xxx |
     | MAIL_SENDER_ADDRESS | Email that want to be used to send mail | example@gmail.com |
 9. Complete the constant.ts value<br />
 Rename constant.example.ts file at ```client/src/utils``` directory become ```constant.ts```, then fill the value for every constant. Below is the guideline for filling the constant.ts value:<br />
     | Key | What To Fill | Example Value |
     | :---: | :---: | :---: |
-    | GOOGLE_CLIENT_ID | Your google client ID | 3392348929324-tarur228dxxx |
-    | FACEBOOK_APP_ID | Your facebook app ID | 18239943847394 |
+    | GOOGLE_CLIENT_ID | Your google client ID | 3392389635496-jayaram193kxxx |
+    | FACEBOOK_APP_ID | Your facebook app ID | 16935673848316 |
 10. Lastly, run below command at your terminal to spin off the application
     ```
     npm run dev && cd client && npm start
@@ -140,38 +119,11 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right"><a href="#top">back to top</a></p>
 
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right"><a href="#top">back to top</a></p>
 
 ## Contact
 
-LinkedIn: [Stanley Claudius](https://www.linkedin.com/in/stanley-claudius-4560b21b7)
+LinkedIn: [Jayaram Akula](https://www.linkedin.com/in/santhosh-jayaram-178390115/)
 
-Project Link: [https://github.com/stanleyclaudius/chat-app](https://github.com/stanleyclaudius/chat-app)
-
-<p align="right"><a href="#top">back to top</a></p>
-
-## Acknowledgments
-
-Special thanks to:
-
-* [Othneildrew](https://github.com/othneildrew/) for providing an amazing README template.
-* [React Icons](https://react-icons.github.io/react-icons/) for providing icon to be used in this application.
-* [Tailwind CSS](https://tailwindcss.com/) for providing CSS framework to be used in this application.
-* [Heroku](https://herokuapp.com) for providing hosting service for this application.
+Project Link: [https://github.com/SanthoshJayaram1/chat-application](https://github.com/SanthoshJayaram1/chat-application)
 
 <p align="right"><a href="#top">back to top</a></p>
-
-[forks-shield]: https://img.shields.io/github/forks/stanleyclaudius/chat-app.svg?style=for-the-badge
-[forks-url]: https://github.com/stanleyclaudius/chat-app/network/members
-[stars-shield]: https://img.shields.io/github/stars/stanleyclaudius/chat-app.svg?style=for-the-badge
-[stars-url]: https://github.com/stanleyclaudius/chat-app/stargazers
-[issues-shield]: https://img.shields.io/github/issues/stanleyclaudius/chat-app.svg?style=for-the-badge
-[issues-url]: https://github.com/stanleyclaudius/chat-app/issues
-[license-shield]: https://img.shields.io/github/license/stanleyclaudius/chat-app.svg?style=for-the-badge
-[license-url]: https://github.com/stanleyclaudius/chat-app/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/stanley-claudius-4560b21b7
