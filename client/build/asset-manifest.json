@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.4cf55daa.css",
-    "main.js": "/static/js/main.bed75d60.js",
+    "main.js": "/static/js/main.317fe004.js",
     "static/media/ringtone.mp3": "/static/media/ringtone.662a7698e36535e2ebba.mp3",
     "index.html": "/index.html",
     "main.4cf55daa.css.map": "/static/css/main.4cf55daa.css.map",
-    "main.bed75d60.js.map": "/static/js/main.bed75d60.js.map"
+    "main.317fe004.js.map": "/static/js/main.317fe004.js.map"
   },
   "entrypoints": [
     "static/css/main.4cf55daa.css",
-    "static/js/main.bed75d60.js"
+    "static/js/main.317fe004.js"
   ]
 }
