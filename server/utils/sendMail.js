@@ -1,33 +1,16 @@
 const nodemailer = require('nodemailer')
-const { OAuth2Client } = require('google-auth-library')
 
-const OAUTH_PLAYGROUND = 'https://developers.google.com/oauthplayground'
-
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
-const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
-const MAIL_REFRESH_TOKEN = process.env.MAIL_REFRESH_TOKEN
 const MAIL_SENDER_EMAIL = process.env.MAIL_SENDER_ADDRESS
+const MAIL_PASSWORD=process.env.MAIL_PASSWORD
 
 const sendMail = async(to, url, text) => {
-  const oAuth2Client = new OAuth2Client(
-    GOOGLE_CLIENT_ID,
-    GOOGLE_CLIENT_SECRET,
-    OAUTH_PLAYGROUND
-  )
-  oAuth2Client.setCredentials({refresh_token: MAIL_REFRESH_TOKEN})
 
   try {
-    const accessToken = oAuth2Client.getAccessToken()
-
     const transport = nodemailer.createTransport({
-      service: 'gmail',
+      service: 'Gmail',
       auth: {
-        type: 'OAuth2',
         user: MAIL_SENDER_EMAIL,
-        clientId: GOOGLE_CLIENT_ID,
-        clientSecret: GOOGLE_CLIENT_SECRET,
-        refreshToken: MAIL_REFRESH_TOKEN,
-        accessToken
+        pass:MAIL_PASSWORD,
       }
     })
 
